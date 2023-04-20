@@ -16,7 +16,7 @@
     steps{
     script{
     
-    withDockerRegistry(credentialsId: '5f70e76c-0ba5-4ae2-b104-01e55ba3d96c') {
+withDockerRegistry(credentialsId: '72e430f7-240e-4aa2-8af6-7fe95f498515', toolName: 'Docker') {
     nginx_image.push()
     web_image.push()
     }
@@ -27,7 +27,7 @@
 stage('K8s stage'){
   steps{
     script{
-      kubeconfig(credentialsId: '763ea751-5125-40b9-83d6-ffc9bb4506c8', serverUrl: '') {
+kubeconfig(credentialsId: '340a9d0b-10ae-42b4-84c4-bdeaaa81414b', serverUrl: '') {
     bat '''
     kubectl apply -f kubernetes/k8files/
     '''
