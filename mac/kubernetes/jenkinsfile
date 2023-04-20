@@ -6,8 +6,8 @@
        steps {       
 
          script {    
-          nginx_image = docker.build("prince2489/nginximage:kubernetes","-f kubernetes\\nginx-nodejs-redis\\nginx\\Dockerfile .")      
-          web_image = docker.build("prince2489/webimage:kubernetes","-f kubernetes\\nginx-nodejs-redis\\web\\Dockerfile .")      
+          nginx_image = docker.build("prince2489/nginximage:kubernetes","-f kubernetes/nginx-nodejs-redis/nginx/Dockerfile .")      
+          web_image = docker.build("prince2489/webimage:kubernetes","-f kubernetes/nginx-nodejs-redis/web/Dockerfile .")      
          }        
        }      
      }
