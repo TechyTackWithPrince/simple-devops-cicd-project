@@ -48,7 +48,7 @@
     steps{
     script{
     
-  withDockerRegistry(toolName: 'Docker', url: 'localhost:5050') {
+withDockerRegistry(credentialsId: '72e430f7-240e-4aa2-8af6-7fe95f498515', toolName: 'Docker') {
     nginx_image.push()
     web_image.push()
     }
