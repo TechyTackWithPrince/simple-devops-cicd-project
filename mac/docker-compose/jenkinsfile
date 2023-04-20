@@ -1,7 +1,18 @@
  pipeline {  
    agent any
 
-   stages {   
+   stages {  
+         stage("Image build") {     
+       steps {       
+         // variable assignment (other than environment variables) can only be done in a script block
+         // complex global variables (with properties or methods) can only be run in a script block
+         // env variables can also be set within a script block
+         sh '''
+          ls
+          hostname
+         '''       
+       }      
+     } 
      stage("Image build") {     
        steps {       
          // variable assignment (other than environment variables) can only be done in a script block
